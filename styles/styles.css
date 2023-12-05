@@ -1,131 +1,129 @@
-/* Colores primarios */
-:root {
-    --dark-cyan: hsl(158, 36%, 37%);
-    --cream: hsl(30, 38%, 92%);
+body {
+    height: 100vh;
+    background-color: hsl(30, 38%, 92%);
+  
+    display: flex;
+    flex-direction: column;
+    
+    font-family: Montserrat;
   }
   
-  /* Colores neutrales */
-  :root {
-    --very-dark-blue: hsl(212, 21%, 14%);
-    --dark-grayish-blue: hsl(228, 12%, 48%);
-    --white: hsl(0, 0%, 100%);
+  main {
+    width: 600px;
+    height: 454px;
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   
-  /* Tamaño de fuente para párrafos */
-  body {
+  img {
+    width: 300px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+  
+  section.right {
+    padding: 32px;
+  }
+  
+  .product {
+    color: hsl(228, 12%, 48%);
     font-size: 14px;
   }
   
-  /* Fuentes */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
+  .product-name {
+    font-family: Fraunces;
     font-weight: 700;
-    src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm459Wdhyzg.ttf) format('truetype');
+    font-size: 32px;
+    line-height: 32px;
+    color: rgb(32, 32, 32);
+    margin: 20px 0 23px 0;
   }
   
-  @font-face {
-    font-family: 'Fraunces';
-    font-style: normal;
+  .description {
+    font-size: 14px;
+    color: hsl(228, 12%, 48%);
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+  
+  .pricing {
+    margin: 29px 0;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  .current-price {
+    font-family: Fraunces;
+    font-size: 32px;
+    margin-right: 20px;
     font-weight: 700;
-    src: local('Fraunces Bold'), local('Fraunces-Bold'), url(https://fonts.gstatic.com/s/fraunces/v6/va9B4kDNxMZdWfMOD5VnXTFNVZVOIFJOUbJ9ISaU.ttf) format('truetype');
+    color: hsl(158, 36%, 37%);
   }
   
-  /* Estilo general del cuerpo */
-  body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .actual-price {
+    text-decoration: line-through;
+    color: hsl(228, 12%, 48%);
+    font-size: 14px;
+  }
+  
+  button {
+    font-family: Montserrat;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    background-color: hsl(158, 36%, 37%);
+  
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: var(--cream);
-    color: var(--very-dark-blue);
   }
   
-  /* Estilo del contenedor de la tarjeta */
-  .card {
-    display: flex;
-    border: 1px solid var(--dark-grayish-blue);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: var(--white);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
-    max-width: 435px;
-  }
-  
-  /* Estilos de la imagen en la tarjeta */
-  .card img {
-    width: 187px;
-    height: auto;
-    border-radius: 8px 0 0 8px;
-  }
-  
-  /* Estilos del contenido en la tarjeta */
-  .card-content {
-    padding: 16px;
-  }
-  
-  .card-content h3.perfume {
-    font-weight: bold;
-    color: var(--dark-grayish-blue);
-    font-size: 14px;
-  }
-  
-  .card-content h2.titulo {
-    font-family: 'Fraunces', sans-serif;
-    font-weight: 700;
-    margin-top: 8px;
-  }
-  
-  .card-content p {
-    margin: 10px 0;
-  }
-  
-  /* Estilo para los precios */
-  .card-content h3.precio {
-    display: flex;
-    align-items: center;
-  }
-  
-  .card-content h3.precio span {
-    color: var(--dark-cyan);
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  .card-content h3.precio span.precio-rayado {
-    text-decoration: line-through;
-    color: var(--dark-grayish-blue);
-    font-size: 12px;
-  }
-  
-  /* Estilo para el botón "Add to cart" */
-  .card-content button.add {
-    background-color: var(--dark-cyan);
-    color: var(--cream);
-    padding: 12px 50px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  /* Estilos para el icono cart */
   .cart-icon {
-    max-width: 16px;
-    width: auto;
-    vertical-align: middle;
-    margin-right: 8px;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
   }
   
+  button:active {
+    background-color: hsl(158, 36%, 17%);
+  }
+  
+  
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: hsl(228, 45%, 44%); }
+  
+  footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  @media screen and (max-width: 375px) {
+    body {
+      margin-bottom: 130px;
+    }
+  
+    main {
+      width: 360px;
+      height: 700px;
+      margin-bottom: 40px;
+  
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  
+    .product-img {
+      width: 360px;
+      border-radius: 10px 10px 0 0;
+      content: url("/images/image-product-mobile.jpg") !important;
+    }
+  };
